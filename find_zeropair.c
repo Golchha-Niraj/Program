@@ -11,6 +11,11 @@ void find_max_elem(unsigned int *count_arr)
 			max=count_arr[i];
 		}
 	}
+	if(max==0)
+	{
+		printf("zero max pair =1.\n");
+		return;
+	}
 	printf("zero max pair =%d.\n",max);
 }
 
@@ -21,10 +26,12 @@ void zeropair_dis_maxpair(char *str)
 	unsigned count_arr[20]={0};
 	for(i=0;str[i]!='\0';i++)
 	{
-		if(str[i]==0)
-		{
-			//	count_arr[j++]=++count;
-		}
+		/*	if(str[i]==0)
+			{	
+			printf("zero max pair =1.\n");
+			return;
+			}
+		 */
 		if(str[i]=='0' && str[i+1]=='0')
 		{
 			count_arr[j]=++count+1;
@@ -38,13 +45,16 @@ void zeropair_dis_maxpair(char *str)
 		//	printf("deb2\n");
 	}
 
-	//	for(i=0;i<20;i++)
-	//		printf("%d ",count_arr[i]);
+/*	for(i=0;i<20;i++)
+		printf("%d ",count_arr[i]);
+*/
 	find_max_elem(count_arr);
+
 }
 
 main()
 {
-	char str[20]="100245005065000000";
+	char str[20]="1245050650";
+	//1)char str[20]="124500506500000";
 	zeropair_dis_maxpair(str);
 }
