@@ -25,14 +25,14 @@ void count_occurance_word_str(char *str)
 				++count;
 			}
 		printf("cmp val is %d.\n",cmp_v);
-		}
 		printf("my rept word %d times.\n",count);
+		}
 	}
 
 }
 
 main()
 {
-	char str[50]="Hello India my than my";
+	char str[50]="Hello India my than my my";
 	count_occurance_word_str(str);
 }
