@@ -1,38 +1,35 @@
 #include<stdio.h>
 
-void count_occurance_word_str(char *str)
+void count_occurance_word_str(char *str,char *search_word)
 {
 	int count=0;
-	int index=0;
 	int index_current=0;
 	int i=0;
-	int cmp_v=0;
 	char temp[20]={'0'};
-	char search_str[5]="my";
-	for(i=0;str[i]!='\0';i++)
+	unsigned int slen=strlen(str);
+	for(i=0;i<=slen;i++)
 	{
-		if(str[i]==' ')
+		if(str[i]==' '|| str[i]=='\0')
 		{
 			strncpy(temp,str+index_current,i-index_current);
 			temp[i-index_current]='\0';
 			index_current=i+1;
-			printf("deb1\n");
-			printf("index_current=%d\n",index_current);
-			printf("i=%d, temp=%s\n",i,temp);
 
-			if(strcmp(temp,search_str)==0)
+			if(strcmp(temp,search_word)==0)
 			{	
 				++count;
 			}
-		printf("cmp val is %d.\n",cmp_v);
-		printf("my rept word %d times.\n",count);
 		}
 	}
-
+	printf("String is \"%s\".\n",str);
+	printf("%s word repeat %d times in string.\n",search_word,count);
 }
 
 main()
 {
 	char str[50]="Hello India my than my my";
-	count_occurance_word_str(str);
+	char search_word[30];
+	printf("Enter Serching keyword:");
+	gets(search_word);
+	count_occurance_word_str(str,search_word);
 }
